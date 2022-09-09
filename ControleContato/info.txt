@@ -1,0 +1,24 @@
+﻿Criando meu serviço/definindo meu contexto em program.cs. A string de conexão usada é par ao banco MySql.
+O tipo de  informação passado na string se altera de acordo com o banco que se tem na maquina. Assim como o metodo chamado, no caso useMySql
+
+    builder.Services.AddDbContext<BancoContext>
+                (options => options.UseMySql(
+                    "server=localhost;Initial Catalog=CRUD_MVC_MYSQL;user id=root;password=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.29-mysql")));
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Criando migration do Modelo que tenho no software:
+
+    Add-Migration nome_migration -Context nome_context
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Criando os dados propriamente ditos no banco. Criando a base e a tabela que foram setadas no migration anterior
+
+    Updata-Database -Context name_context
+
+Daí de acordo com a migration criada para esse contexto, as alterações serão feitas no banco de dados
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------

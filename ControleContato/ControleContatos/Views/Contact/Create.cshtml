@@ -1,0 +1,55 @@
+﻿@model ContatoModel;
+
+@{
+    ViewData["Title"] = "Adicionar Contato";
+}
+
+<div class="text-center">
+    <h1 class="display-3">Cadastrar Contato</h1>
+</div>
+
+
+<div style="width: 700px;" class="ms-auto me-auto">
+    
+    <form asp-controller="Contact" asp-action="Create" method="post" >
+        <div class="row mt-2 mt-md-5">
+
+            <div class="col-md-6">
+                <label for="inputEmail4">Nome</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Nome" asp-for=Name>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputEmail">E-mail</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" asp-for="Email">
+            </div>
+
+        </div>
+        <div class="row mt-4">
+            <div class="form-group col-md-6">
+                <label for="inputCellphone">Telefone</label>
+                <input type="text" class="form-control" id="inputCellphone" placeholder="Telefone" asp-for="Cellphone" />
+            </div>
+        </div>
+
+      <!--<div class="row mt-4">
+
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+
+            <div class="form-group col">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress">
+            </div>
+
+          </div> -->
+        
+        <div class=" text-center mt-3">
+            <button type="submit" class="me-2 btn btn-primary">Cadastrar</button>
+            <a class="btn btn-danger" asp-controller="Contact" asp-action="Index" role="button">Voltar</a>
+        </div>
+        
+    </form>
+</div>

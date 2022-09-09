@@ -1,0 +1,10 @@
+@model HomeModel;
+
+@{
+    ViewData["Title"] = "Sou um teste";
+}
+
+<div>
+    <h1>Hello World!</h1>
+    <p>É um prazer te ter aqui @Model.getNome(). Por favor, confirme seu cadastro, enviamos um e-mail de confirmação para o e-mail informado no cadastro: @Model.getEmail()</p>
+</div>
