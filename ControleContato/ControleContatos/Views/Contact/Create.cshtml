@@ -17,11 +17,13 @@
             <div class="col-md-6">
                 <label for="inputEmail4">Nome</label>
                 <input type="text" class="form-control" id="inputName" placeholder="Nome" asp-for=Name>
+                @Html.ValidationMessageFor(x => x.Name)
             </div>
 
             <div class="col-md-6">
                 <label for="inputEmail">E-mail</label>
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email" asp-for="Email">
+                @Html.ValidationMessageFor(x => x.Email)
             </div>
 
         </div>
@@ -29,6 +31,7 @@
             <div class="form-group col-md-6">
                 <label for="inputCellphone">Telefone</label>
                 <input type="text" class="form-control" id="inputCellphone" placeholder="Telefone" asp-for="Cellphone" />
+                @Html.ValidationMessageFor(x => x.Cellphone)
             </div>
         </div>
         

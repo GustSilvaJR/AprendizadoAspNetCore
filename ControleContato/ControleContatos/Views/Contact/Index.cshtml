@@ -12,6 +12,23 @@
 
 <div class="text-center">
     
+    @if(TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert">X</button>
+            <p>@TempData["MensagemSucesso"]</p>
+        </div>
+    }
+
+    @if(TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert">X</button>
+            <p>@TempData["MensagemErro"]</p>
+        </div>
+    }
+
+    <br />
 
     <table class="mt-5 table">
         <thead>

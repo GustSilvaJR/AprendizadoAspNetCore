@@ -19,7 +19,7 @@ namespace ControleContact.Controllers
 
         //Rotas GET
         //Por padrao essas rotas que nao recebem nenhum parametro utilizando o metodo GET
-        
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -51,25 +51,68 @@ namespace ControleContact.Controllers
         [HttpPost]
         public IActionResult Create(ContatoModel contato)
         {
-            this._contatoRepositorio.Adicionar(contato);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    this._contatoRepositorio.Adicionar(contato);
+                    TempData["MensagemSucesso"] = "Contato cadastrado com sucesso";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(contato);
+                }
+            }
+            catch (System.Exception error)
+            {
+                TempData["MensagemErro"] = $"Não foi possível cadastrar o contato, tente novamente. Detalhe do erro: {error.Message}";
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
         public IActionResult Edit(ContatoModel contato)
         {
-            this._contatoRepositorio.AtualizarContato(contato);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    this._contatoRepositorio.AtualizarContato(contato);
+                    TempData["MensagemSucesso"] = "Contato alterado com sucesso";
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (System.Exception error)
+            {
+                TempData["MensagemErro"] = $"Não foi possível alterar o contato, tente novamente. Detalhe do erro: {error.Message}";
+
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
         public IActionResult Delete(IFormCollection value)
         {
-            Int32.TryParse(value["id"], out int ident);
-            Console.WriteLine(ident);
-            Console.WriteLine(ident.GetType());
-            this._contatoRepositorio.Deletar(ident);
-            return RedirectToAction("Index");
+            try
+            {
+                Int32.TryParse(value["id"], out int ident);
+                this._contatoRepositorio.Deletar(ident);
+                TempData["MensagemSucesso"] = "Contato excluído com sucesso";
+
+                return RedirectToAction("Index");
+            }
+            catch(System.Exception error)
+            {
+                TempData["MensagemErro"] = $"Não foi possível excluir o contato, tente novamente. Detalhe do erro: {error.Message}";
+
+                return RedirectToAction("Index");
+            }
         }
 
 
