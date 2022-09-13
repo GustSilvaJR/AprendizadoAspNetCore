@@ -10169,11 +10169,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\digisul16\\Documents\\Estudo\\Asp.Net\\ControleContato\\ControleContatos\\ControleContatos\\ControleContatos.csproj",
+      "projectUniqueName": "C:\\Users\\digisul16\\Documents\\Estudo\\Asp.Net\\AprendizadoAspNetCore\\ControleContato\\ControleContatos\\ControleContatos.csproj",
       "projectName": "ControleContatos",
-      "projectPath": "C:\\Users\\digisul16\\Documents\\Estudo\\Asp.Net\\ControleContato\\ControleContatos\\ControleContatos\\ControleContatos.csproj",
+      "projectPath": "C:\\Users\\digisul16\\Documents\\Estudo\\Asp.Net\\AprendizadoAspNetCore\\ControleContato\\ControleContatos\\ControleContatos.csproj",
       "packagesPath": "C:\\Users\\digisul16\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\digisul16\\Documents\\Estudo\\Asp.Net\\ControleContato\\ControleContatos\\ControleContatos\\obj\\",
+      "outputPath": "C:\\Users\\digisul16\\Documents\\Estudo\\Asp.Net\\AprendizadoAspNetCore\\ControleContato\\ControleContatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\digisul16\\AppData\\Roaming\\NuGet\\NuGet.Config",

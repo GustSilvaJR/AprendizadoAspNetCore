@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XEKjInIuBZUSTFTzn7J6uWaSc2DOxlam/EcNCoSanUCRpluhJin6Uifuegu8HR1thUj3E+2MTBMkoAramYLb5w==",
+  "dgSpecHash": "e4itKpzm/y1U8M/A3LNfjkNa2fKlmtfCfgOv6MdBKH3jLhj10nuHDb8AW17mhVv0w2fOP9P/JAv4wTdBM6Xvqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\digisul16\\Documents\\Estudo\\Asp.Net\\ControleContato\\ControleContatos\\ControleContatos\\ControleContatos.csproj",
+  "projectFilePath": "C:\\Users\\digisul16\\Documents\\Estudo\\Asp.Net\\AprendizadoAspNetCore\\ControleContato\\ControleContatos\\ControleContatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\digisul16\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\digisul16\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

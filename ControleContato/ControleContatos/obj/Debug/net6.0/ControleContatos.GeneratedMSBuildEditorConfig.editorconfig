@@ -8,53 +8,53 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ControleContatos
 build_property.RootNamespace = ControleContatos
-build_property.ProjectDir = C:\Users\digisul16\Documents\Estudo\Asp.Net\ControleContato\ControleContatos\ControleContatos\
+build_property.ProjectDir = C:\Users\digisul16\Documents\Estudo\Asp.Net\AprendizadoAspNetCore\ControleContato\ControleContatos\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\digisul16\Documents\Estudo\Asp.Net\ControleContato\ControleContatos\ControleContatos
+build_property.MSBuildProjectDirectory = C:\Users\digisul16\Documents\Estudo\Asp.Net\AprendizadoAspNetCore\ControleContato\ControleContatos
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Contact/Create.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Contact/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Contact/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Contact/Edit.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Contact/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Contact/Index.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Home/Index.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Contact/VerifyDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxWZXJpZnlEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Home/Privacy.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Shared/Error.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/_ViewImports.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/_ViewStart.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digisul16/Documents/Estudo/Asp.Net/ControleContato/ControleContatos/ControleContatos/Views/Shared/_Layout.cshtml]
+[C:/Users/digisul16/Documents/Estudo/Asp.Net/AprendizadoAspNetCore/ControleContato/ControleContatos/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-np6767stkz
