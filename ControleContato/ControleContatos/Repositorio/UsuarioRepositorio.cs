@@ -16,12 +16,23 @@ namespace ControleContatos.Repositorio
             _bancoContext = bancoContext;
         }
 
-        public void CreateUser(UsuarioModel usuario)
+        public UsuarioModel GetUserById(int id)
         {
-            var date = (DateTime.Now).ToString("dd/MM/yyyy HH:mm:ss");
+            var user = this._bancoContext.Usuarios.FirstOrDefault(x => x.Id == id);
+            return user;
+        }
+
+        public List<UsuarioModel> GetUsers()
+        {
+            var usuarios = _bancoContext.Usuarios.ToList();
+            return usuarios;
+        }
+
+        public string GetHashPass(string pass)
+        {
             MD5 md5Hash = MD5.Create();
 
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(usuario.Senha));
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(pass));
             StringBuilder sBuilder = new StringBuilder();
 
             for (int i = 0; i < data.Length; i++)
@@ -29,17 +40,35 @@ namespace ControleContatos.Repositorio
                 sBuilder.Append(data[i].ToString("x2"));
             }
 
+            return sBuilder.ToString();
+        }
+
+        public void CreateUser(UsuarioModel usuario)
+        {
+            var date = (DateTime.Now).ToString("dd/MM/yyyy HH:mm:ss");
+            
+
             usuario.PerfilUser = Enum.Perfil.Common;
-            usuario.Senha = sBuilder.ToString();
+            usuario.Senha = GetHashPass(usuario.Senha);
             usuario.DataCriacao = date;
             _bancoContext.Usuarios.Add(usuario);
             _bancoContext.SaveChanges();
         }
 
-        public List<UsuarioModel> GetUsers()
+        public void EditUser(UsuarioModel userModified)
         {
-            var usuarios = _bancoContext.Usuarios.ToList();
-            return usuarios;
+            var userBD = this.GetUserById(userModified.Id);
+
+            if(userBD != null)
+            {
+                userBD.Name = userModified.Name;
+                userBD.Email = userModified.Email;
+                userBD.Login = userModified.Login;
+                userBD.Senha = this.GetHashPass(userModified.Senha);
+
+                this._bancoContext.Usuarios.Update(userBD);
+                this._bancoContext.SaveChanges();
+            }
         }
 
     }
