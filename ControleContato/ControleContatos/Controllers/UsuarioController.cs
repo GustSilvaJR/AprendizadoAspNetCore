@@ -33,6 +33,18 @@ namespace ControleContatos.Controllers
             return View(user);
         }
 
+        [HttpGet]
+        public IActionResult VerifyDelete(int id, string name)
+        {
+            string[] data = null;
+
+            data = new string[2];
+
+            data[0] = id.ToString();
+            data[1] = name;
+            return View(data);
+        }
+
         [HttpPost]
         public IActionResult Create(UsuarioModel usuario)
         {
@@ -58,6 +70,20 @@ namespace ControleContatos.Controllers
             catch(System.Exception error)
             {
                 Console.WriteLine("Erro Estourado: " + error);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                this._usuarioRepositorio.DeleteUser(id);
+            }catch(System.Exception error)
+            {
+                Console.WriteLine("Erro estourado: " + error);
             }
 
             return RedirectToAction("Index");
