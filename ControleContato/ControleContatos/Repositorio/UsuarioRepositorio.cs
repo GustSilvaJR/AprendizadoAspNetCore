@@ -65,6 +65,7 @@ namespace ControleContatos.Repositorio
                 userBD.Email = userModified.Email;
                 userBD.Login = userModified.Login;
                 userBD.Senha = this.GetHashPass(userModified.Senha);
+                userBD.DataAtualizacao = (DateTime.Now).ToString("dd/MM/yyyy HH:mm:ss");
 
                 this._bancoContext.Usuarios.Update(userBD);
                 this._bancoContext.SaveChanges();
