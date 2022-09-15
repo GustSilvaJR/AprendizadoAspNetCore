@@ -50,11 +50,21 @@ namespace ControleContatos.Controllers
         {
             try
             {
-                this._usuarioRepositorio.CreateUser(usuario);
+                if (ModelState.IsValid)
+                {
+                    this._usuarioRepositorio.CreateUser(usuario);
+                    TempData["MensagemSucesso"] = "Usuário cadastrado com sucesso";
+                }
+                else
+                {
+                    return View();
+                }
+
+                
             }
             catch(System.Exception error)
             {
-                Console.WriteLine("Excessão estourada: " + error.Message);
+                TempData["MensagemErro"] = $"Não foi possível cadastrar o usuário, tente novamente. Detalhe do erro: {error.Message}";
             }
 
             return RedirectToAction("Index");
@@ -66,6 +76,7 @@ namespace ControleContatos.Controllers
             try
             {
                 this._usuarioRepositorio.EditUser(user);
+                TempData["MensagemSucesso"] = "Usuário alterado com sucesso";
             }
             catch(System.Exception error)
             {
@@ -81,7 +92,9 @@ namespace ControleContatos.Controllers
             try
             {
                 this._usuarioRepositorio.DeleteUser(id);
-            }catch(System.Exception error)
+                TempData["MensagemSucesso"] = "Usuário apagado com sucesso";
+            }
+            catch(System.Exception error)
             {
                 Console.WriteLine("Erro estourado: " + error);
             }
