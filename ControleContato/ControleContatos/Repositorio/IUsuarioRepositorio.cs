@@ -9,6 +9,8 @@ namespace ControleContatos.Repositorio
 
         public void EditUser(UsuarioModel userModified);
 
+        public void DeleteUser(int id);
+
         public string GetHashPass(string pass);
 
         public UsuarioModel GetUserById(int id);

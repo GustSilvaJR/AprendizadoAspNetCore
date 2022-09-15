@@ -71,5 +71,11 @@ namespace ControleContatos.Repositorio
             }
         }
 
+        public void DeleteUser(int id)
+        {
+            var user = this.GetUserById(id);
+            this._bancoContext.Usuarios.Remove(user);
+            this._bancoContext.SaveChanges();
+        }
     }
 }
