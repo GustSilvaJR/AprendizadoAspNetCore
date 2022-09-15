@@ -1,0 +1,20 @@
+﻿@model string[]
+
+@{
+    ViewData["Title"] = "Deletar Usuário";
+}
+
+<div style="height: 600px;" class="text-center d-flex justify-content-center align-items-center">
+    <form asp-controller="Usuario" asp-action="Delete" method="post">
+
+        <input name="id" type="hidden" value="@Model[0]" />
+        <div style="width:800px" class="py-5 px-4 text-center bg-light">
+            <h2>Deseja realmente apagar este contato: @Model[1] ?</h2>
+
+            <span>
+                <button class="me-2 btn btn-danger" type="submit">Apagar</button>
+                <a class="btn btn-secondary" asp-controller="Usuario" asp-action="Index" role="button">Cancelar</a>
+            </span>
+        </div>
+    </form>
+</div>
