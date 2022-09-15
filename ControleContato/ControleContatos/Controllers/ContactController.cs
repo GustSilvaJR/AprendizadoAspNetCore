@@ -16,7 +16,6 @@ namespace ControleContact.Controllers
             this._contatoRepositorio = contatoRepositorio;
         }
 
-
         //Rotas GET
         //Por padrao essas rotas que nao recebem nenhum parametro utilizando o metodo GET
 
@@ -114,7 +113,6 @@ namespace ControleContact.Controllers
                 return RedirectToAction("Index");
             }
         }
-
 
     }
 }
