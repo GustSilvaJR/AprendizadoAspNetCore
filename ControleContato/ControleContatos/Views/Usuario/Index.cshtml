@@ -1,0 +1,69 @@
+﻿@model List<UsuarioModel>;
+
+@{
+    ViewData["Title"] = "Listagem de Usuarios";
+}
+
+<div class="text-end">
+    <a asp-controller="Usuario" asp-action="Create" class="btn btn-primary">Adicionar Usuario +</a>
+</div>
+
+<h1 class="display-4">Listagem de Contatos</h1>
+
+<div class="text-center">
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <br />
+
+    <table id="table-Usuarios" class="mt-5 table text-center">
+        <thead>
+            <tr>
+                <th class="text-center" scope="col">#</th>
+                <th class="text-center" scope="col">Nome</th>
+                <th class="text-center" scope="col">E-mail</th>
+                <th class="text-center" scope="col">Perfil</th>
+                <th class="text-center" scope="col">Data de Criação</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                var i = 1;
+                foreach (var usuario in Model)
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+                        <td>@usuario.Name</td>
+                        <td>@usuario.Email</td>
+                        <td>@usuario.PerfilUser</td>
+                        <td>@usuario.DataCriacao</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a type="button" class="btn btn-primary me-2" asp-route-id=@usuario.Id asp-controller="Usuario" asp-action="Edit" role="button">Editar</a>
+                                <a type="button" class="btn btn-danger" asp-route-id=@usuario.Id asp-controller="Usuario" asp-action="VerifyDelete" role="button">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    i++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
