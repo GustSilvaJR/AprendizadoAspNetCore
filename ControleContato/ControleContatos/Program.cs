@@ -18,6 +18,7 @@ namespace ControleContatos
                     "server=localhost;Initial Catalog=CRUD_MVC_MYSQL;user id=root;password=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.29-mysql")));
 
             builder.Services.AddScoped<IContatoRepositorio, ContatoRepositorio>();
+            builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
             var app = builder.Build();
 

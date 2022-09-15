@@ -12,5 +12,6 @@ namespace ControleContatos.Data
 
         //Criando referencia para uma tabela que eu va ter no banco. Como tipo passo o modelo que representa minha tabela
         public DbSet <ContatoModel>? Contatos { get; set; }
+        public DbSet<UsuarioModel> Usuarios { get; set; }
     }
 }
