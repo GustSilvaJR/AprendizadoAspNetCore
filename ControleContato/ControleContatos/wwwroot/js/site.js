@@ -3,9 +3,8 @@
 
 // Write your JavaScript code.
 
-
-$(document).ready(function () {
-    $('#table-contatos').DataTable({
+function getTable(id) {
+    $(id).DataTable({
         "ordering": true,
         "paging": true,
         "searching": true,
@@ -33,6 +32,11 @@ $(document).ready(function () {
             }
         }
     });
+}
+
+$(document).ready(function () {
+    getTable("table-Usuarios");
+    getTable("table-Contatos");
 })
 
 $('.close-alert').click(function () {
