@@ -26,6 +26,13 @@ namespace ControleContatos.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var user = this._usuarioRepositorio.GetUserById(id);
+            return View(user);
+        }
+
         [HttpPost]
         public IActionResult Create(UsuarioModel usuario)
         {
@@ -36,6 +43,21 @@ namespace ControleContatos.Controllers
             catch(System.Exception error)
             {
                 Console.WriteLine("Excessão estourada: " + error.Message);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Edit(UsuarioModel user)
+        {
+            try
+            {
+                this._usuarioRepositorio.EditUser(user);
+            }
+            catch(System.Exception error)
+            {
+                Console.WriteLine("Erro Estourado: " + error);
             }
 
             return RedirectToAction("Index");
