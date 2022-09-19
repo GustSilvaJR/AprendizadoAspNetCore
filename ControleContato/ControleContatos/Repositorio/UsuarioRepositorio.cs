@@ -3,6 +3,7 @@ using ControleContatos.Data;
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
+using ControleContatos.Controllers;
 
 namespace ControleContatos.Repositorio
 {
@@ -41,6 +42,19 @@ namespace ControleContatos.Repositorio
             }
 
             return sBuilder.ToString();
+        }
+
+        public bool ValidaSignIn( string login, string senha)
+        {
+            var user = (this._bancoContext.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper()));
+            if (user != null)
+            {
+                return (user.Senha == senha ? true : false);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void CreateUser(UsuarioModel usuario)
