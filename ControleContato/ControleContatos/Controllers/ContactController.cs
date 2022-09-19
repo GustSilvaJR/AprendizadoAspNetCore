@@ -79,7 +79,6 @@ namespace ControleContact.Controllers
                 {
                     this._contatoRepositorio.AtualizarContato(contato);
                     TempData["MensagemSucesso"] = "Contato alterado com sucesso";
-
                     return RedirectToAction("Index");
                 }
                 else
@@ -90,7 +89,6 @@ namespace ControleContact.Controllers
             catch (System.Exception error)
             {
                 TempData["MensagemErro"] = $"Não foi possível alterar o contato, tente novamente. Detalhe do erro: {error.Message}";
-
                 return RedirectToAction("Index");
             }
         }
@@ -109,7 +107,6 @@ namespace ControleContact.Controllers
             catch(System.Exception error)
             {
                 TempData["MensagemErro"] = $"Não foi possível excluir o contato, tente novamente. Detalhe do erro: {error.Message}";
-
                 return RedirectToAction("Index");
             }
         }
