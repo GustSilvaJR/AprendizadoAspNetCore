@@ -3,6 +3,15 @@
 }
 
 <div class="text-center">
+    
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+    
     <h1 class="display-4">Bem Vindo!</h1>
     <p>Sistema de Controle de Contatos.</p>
 </div>
