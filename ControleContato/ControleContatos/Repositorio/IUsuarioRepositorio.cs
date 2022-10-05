@@ -5,8 +5,9 @@ namespace ControleContatos.Repositorio
 {
     public interface IUsuarioRepositorio
     {
-
         public UsuarioModel GetUserById(int id);
+
+        public UsuarioModel GetUserByLogin(string login);
 
         public List<UsuarioModel> GetUsers();
 
