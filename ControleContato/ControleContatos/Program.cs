@@ -1,6 +1,8 @@
 using ControleContatos.Data;
+using ControleContatos.Helper;
 using ControleContatos.Repositorio;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace ControleContatos
 {
@@ -17,10 +19,21 @@ namespace ControleContatos
                 (options => options.UseMySql(
                     "server=localhost;Initial Catalog=CRUD_MVC_MYSQL;user id=root;password=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.29-mysql")));
 
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             builder.Services.AddScoped<IContatoRepositorio, ContatoRepositorio>();
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            builder.Services.AddScoped<ISessao, Sessao>();
+
+            builder.Services.AddSession(o =>
+            {
+                o.Cookie.HttpOnly = true;
+                o.Cookie.IsEssential = true;
+            });
 
             var app = builder.Build();
+
+
 
             //builder.Services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
 
@@ -34,6 +47,8 @@ namespace ControleContatos
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
