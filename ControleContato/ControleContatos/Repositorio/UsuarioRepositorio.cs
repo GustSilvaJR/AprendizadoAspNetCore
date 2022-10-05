@@ -23,6 +23,12 @@ namespace ControleContatos.Repositorio
             return user;
         }
 
+        public UsuarioModel GetUserByLogin(string login)
+        {
+            var user = this._bancoContext.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+            return user;
+        }
+
         public List<UsuarioModel> GetUsers()
         {
             var usuarios = _bancoContext.Usuarios.ToList();
