@@ -12,7 +12,21 @@ function App() {
 
   const baseUrl = "https://localhost:7078/api/alunos";
   const [data, setData] = React.useState([]);
-  const [cont, setCont] = React.useState(1);
+
+  const [alunoSelecionado, setAlunoSelecionado] = React.useState({
+    id: '',
+    nome: '',
+    email: '',
+    idade: ''
+  })
+  
+  const handleChange = e => {
+    const {name, value} = e.target;
+    setAlunoSelecionado({
+      ...alunoSelecionado, [name]:value
+    });
+    console.log(alunoSelecionado);
+  }
 
   const pedidoGet = async () => {
     await axios.get(baseUrl)
@@ -22,7 +36,9 @@ function App() {
       .catch(error => {
         console.log("Error: " + error);
       });
-  }
+  };
+
+  let i=1;
 
   useEffect(()=>{
     pedidoGet();
@@ -58,7 +74,7 @@ function App() {
           <tbody>
             {data.map(aluno => (
               <tr key={aluno.id}>
-                <th scope="row">{cont}</th>
+                <th scope="row">{i}</th>
                 <td>{aluno.id}</td>
                 <td>{aluno.nome}</td>
                 <td>{aluno.email}</td>
@@ -67,12 +83,32 @@ function App() {
                   <button className="btn btn-primary">Editar</button>
                   <button className="btn btn-danger">Excluir</button>
                 </td>
-                {setCont(cont)} 
+                 { i++ }
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      
+      <Modal>
+        <ModalHeader>Adicionar Aluno</ModalHeader>
+        <ModalBody>
+         <div className='form-group'>
+          <label for="name">Nome</label>
+          <input className='form-control' type="text" id="name"/>
+          
+          <label for="email">Email</label>
+          <input className='form-control' type="email" id="email"/>
+          
+          <label for="idade">Idade</label>
+          <input className='form-control' type="text" id="idade"/>
+         </div>
+        </ModalBody>
+        <ModalFooter>
+          <button className='btn btn-primary'>Incluir</button>
+          <button className='btn btn-danger'>Cancelar</button>
+        </ModalFooter>
+      </Modal>
 
     </div>
   );
