@@ -70,14 +70,16 @@ namespace ApiEscola.Controllers
         {
             try
             {
-                if(this._alunoService.GetAlunoById(aluno.Id) != null)
+                var alunoValidator = await this._alunoService.GetAlunoByEmail(aluno.Email);
+
+                if (!alunoValidator)
                 {
                     await this._alunoService.CreateAluno(aluno);
                     return CreatedAtRoute(nameof(GetAluno), new { id = aluno.Id }, aluno);
                 }
                 else
                 {
-                    return StatusCode(StatusCodes.Status400BadRequest, "Aluno já existente");
+                    return StatusCode(StatusCodes.Status409Conflict, "Aluno já existente");
                 }
                 
             }
@@ -93,7 +95,7 @@ namespace ApiEscola.Controllers
         {
             try
             {
-                if (this._alunoService.GetAlunoById(id) != null)
+                if (await this._alunoService.GetAlunoByEmail(aluno.Nome))
                 {
                     if (id == aluno.Id)
                     {
