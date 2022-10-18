@@ -47,17 +47,17 @@ namespace ApiEscola.Services
         {
             try
             {
-                IEnumerable<Aluno> alunos;
+                IEnumerable<Aluno> aluno;
 
                 if (!string.IsNullOrEmpty(nome))
                 {
-                    alunos = await this._apiContext.Alunos.Where(aluno => aluno.Nome == nome).ToListAsync();
-                    return alunos;
+                    aluno = await this._apiContext.Alunos.Where(aluno => aluno.Nome == nome).ToListAsync();
+                    return aluno;
                 }
                 else
                 {
-                    alunos = await this.GetAlunos();
-                    return alunos;
+                    aluno = await this.GetAlunos();
+                    return aluno;
                 }
             }
             catch(Exception e)
@@ -90,6 +90,18 @@ namespace ApiEscola.Services
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            }
+        }
+
+        public async Task<bool> GetAlunoByEmail(String email)
+        {
+            if (String.IsNullOrEmpty(email)){
+                return false;
+            }
+            else
+            {
+                var aluno = await this._apiContext.Alunos.FirstOrDefaultAsync(aluno=>aluno.Email == email);
+                return aluno != null ? true : false;
             }
         }
 
