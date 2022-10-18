@@ -65,7 +65,8 @@ function App() {
         abrirFecharModal();
       })
       .catch(error => {
-        console.log("Error:" + error);
+        console.log(error);
+        alert("Ja existe um aluno com esse e-mail cadastrado");
       })
   }
   const pedidoPut = async () => {
@@ -92,21 +93,20 @@ function App() {
 let i = 1;
 
 useEffect(() => {
-  console.log("to preso aqui nessa porra");
   pedidoGet();
 }, [alunoSelecionado]);
 
 return (
   <div className="App">
     <br />
-    <h3 className="border border-danger">Cadastro de Alunos</h3>
-    <header className='text-start border border-danger'>
+    <h3 >Cadastro de Alunos</h3>
+    <header className='text-start'>
       <div className='d-flex'>
         <div className='ms-4'>
           <img src={logoCadastro} alt='Cadastro' />
         </div>
         <div className='mt-auto'>
-          <button className='btn btn-primary border border-danger' onClick={() => { abrirFecharModal() }}>Cadastrar</button>
+          <button className='btn btn-primary' onClick={() => { abrirFecharModal() }}>Cadastrar</button>
         </div>
       </div>
     </header>
@@ -146,13 +146,13 @@ return (
       <ModalBody>
         <div className='form-group'>
           <label htmlFor="name">Nome</label>
-          <input className='form-control' type="text" id="name" name="nome" onChange={handleChange} />
+          <input className='form-control' type="text" id="name" name="nome" onChange={handleChange} /><br/>
 
           <label htmlFor="email">Email</label>
-          <input className='form-control' type="email" id="email" name="email" onChange={handleChange} />
+          <input className='form-control' type="email" id="email" name="email" onChange={handleChange} /><br/>
 
           <label htmlFor="idade">Idade</label>
-          <input className='form-control' type="text" id="idade" name="idade" onChange={handleChange} />
+          <input className='form-control' type="text" id="idade" name="idade" onChange={handleChange} /><br/>
         </div>
       </ModalBody>
       <ModalFooter>
