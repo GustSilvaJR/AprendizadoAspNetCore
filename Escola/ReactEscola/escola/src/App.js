@@ -14,6 +14,7 @@ function App() {
   const [data, setData] = React.useState([]);
   const [modalIncluir, setModalIncluir] = React.useState(false);
   const [modalEditar, setModalEditar] = React.useState(false);
+  const [modalExcluir, setModalExcluir] = React.useState(false);
 
   const [alunoSelecionado, setAlunoSelecionado] = React.useState({
     id: '',
@@ -34,6 +35,9 @@ function App() {
     setAlunoSelecionado(aluno);
     (opcao === "Editar") &&
       abrirFecharModalEditar()
+    
+    (opcao === "Excluir") &&
+      abrirFecharModalExcluir()
   }
 
   const handleChange = e => {
@@ -187,6 +191,12 @@ return (
         <button className='btn btn-primary' onClick={() => {pedidoPut()}}>Editar</button>
         <button className='btn btn-danger' onClick={() => { abrirFecharModalEditar() }}>Cancelar</button>
       </ModalFooter>
+    </Modal>
+
+    <Modal isOpen={modalExcluir}>
+            <ModalHeader>
+              
+            </ModalHeader>
     </Modal>
 
   </div>
