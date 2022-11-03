@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    <form asp-controller="Home" asp-action="GetFinancas" method="get">
+        <div class="text-center row mt-4">
+
+            <label class="col-1" for="getApi">Filial: </label>
+            <input type="text" class=" col-6 form-control me-3 w-25" id="getApi" name="codigoFilial" />
+
+            <button class="btn btn-primary col-2" type="submit">Consultar</button>
+
+            @if(Model != null){
+
+                <table class="table mt-5">
+                    <thead>
+                        <tr>                            
+                            <th scope="col">Id</th>
+                            <th scope="col">Número</th>                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var inst in Model)
+                        {
+                            <tr>
+                                <td> @inst.id </td>
+                                <td> @inst.numero </td>
+                            </tr>
+                        }
+                        
+                    </tbody>
+                </table>
+                
+                
+            }
+        </div>
+    </form>
+</div>
