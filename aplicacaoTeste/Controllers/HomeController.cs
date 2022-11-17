@@ -19,7 +19,7 @@ namespace aplicacaoTeste.Controllers
             
             HttpClient webRequest = new HttpClient();
 
-            webRequest.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes("teste:teste")));
+            webRequest.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes("MASTER:303304")));
 
             var value = Request.QueryString.Value;
             var url = "http://195.1.1.110:53010/api/armazem/is/aberta"+value;
