@@ -29,7 +29,7 @@ import { TesteComponent } from './teste/teste.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counters', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'teste', component: TesteComponent},
+      { path: 'instrucao-servico', component: TesteComponent},
     ])
 
   ],
