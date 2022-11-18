@@ -1,0 +1,16 @@
+--------Criacao do projeto----------
+
+Assim que crio o projeto me é gerado uma pasta com um Controlador no lado do asp.net, onde seria utilizado na consulta de algo feito pelo front
+
+E uma pasta chama ClientApp, que é principalmente a aplicação em Angular.
+
+
+------Client App-------
+
+ dir app-> Pasta com meus componentes
+	app.component.html-> Contem um arquivo html que retorna o componente buscado na rota. A saída da rota é direcionada até ele.
+	app.component.ts -> O arquivo typescript responsável pelo app.component.html
+	app.module.ts -> Arquivo que importa e declara todos os componentes criados, inclusive o componente app principal.
+			Além disso defino as rotas na minha aplicação, que retornarão determinados componentes acessados pelo usuário.
+	app.server.modules -> Parece ser o arquivo principal do angular para iniciar a aplicação. Nela é importada o app.module que contem todos nossos componentes e
+			      componenete app em especifico
